@@ -8,10 +8,10 @@ profile:
   align: right
   image: paimon_lisa.jpg
   address: >
-    <center style="padding-right: 0.5rem;">
-    <p>Paimon Lisa</p>
-    <p>Placeholder Image</p>
-    <p>Real Image Soon™</p>
+    <center style="padding-right: 0.5rem; font-style: italic;">
+    <p style="font-weight: bold; font-style: normal;">Paimon Lisa</p>
+    <p style="color: gray;">Placeholder Image</p>
+    <p style="color: gray;">Real Image Soon™</p>
     </center>
 
 news: true  # includes a list of news items
