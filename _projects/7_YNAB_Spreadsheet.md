@@ -94,39 +94,55 @@ After many attempts, lo and behold, it works! The sastification of creating my f
 Now we have created 17 sheets for each of category. Let's move on the next part.
 
 ### The Second Problem
-Since there is a lot of sheets, it is really hard to navigate from the main sheet to a specific category's sheet.
+
+Since there is a lot of sheets, it is really difficult to navigate from the main sheet to a specific category's sheet.
+
 I want to link each cell that contains a category name in the main sheet to its corresponding sheet.
 If we do it manually, the process will be like the following:
-1) Click at a cell
-2) Press ctrl+k
-3) Click its corresponding sheet.
+1. Click at a cell
+2. Press ctrl+k
+3. Click its corresponding sheet.
+
 Doing this for 17 times would require 17*3 = 51 clicks(+presses), which is painstaking.
+
 Just kidding! It's not that much of a work, but I wanted to try automating this process too. So, here we go!
-"There is a spreadsheet, which contains several sheets inside. In one of the sheets, the cells in the first column contain the names of all other sheets. Link each of these cells to its correspending sheet."
+
+<blockquote>
+"You are given a spreadsheet, which contains several sheets inside. In one of the sheets, the cells in the first column contain the names of all other sheets. Link each of these cells to its correspending sheet."
+</blockquote>
+<blockquote>
 [Thai version] "ใน spreadsheet อันหนึ่ง มี sheet หลายอัน โดยมี sheet นึงที่แต่ละ cell ในคอลัมน์แรก (คอลัมน์ A) เต็มไปด้วยชื่อของ sheet อื่น(นอกจาก sheet นี้)ทั้งหมดอยู่ เราอยาก link แต่ละ cell กับ sheet ที่มีชื่อเดียวกับชื่อที่ระบุใน cell นั้น ๆ"
-I wanted to write a function "Linking()" that iterates through all selected cells, and link the cell to a sheet with the same name as the content in the cell.
+</blockquote>
+I wanted to write a function `Linking()` that iterates through all selected cells, and link the cell to a sheet with the same name as the content in the cell.
+
 As I still couldn't write code, I searched for more pieces of the code I needed:
-1) How to add links to a cell in Spreadsheet? I adapted from https://spreadsheet.dev/add-links-to-a-cell-in-google...
-2) How do I make it link to other sheets? Adapted from little each of these blogs
-https://stackoverflow.com/.../hyperlink-to-a-specific-sheet
-https://newbedev.com/linking-to-another-tab-in-google-sheets
-https://stackoverflow.com/.../iterate-over-range-append...
-This is a more complicated one for sure, as I had to learn how we originally add link to a cell using equal sign (=hyperlink("...")), and how to refer to a string variable in a string(?) (`${variable}`).
+1. How to add links to a cell in Spreadsheet? I adapted from [this documentation](https://spreadsheet.dev/iterate-through-every-cell-in-range-google-sheets-apps-script?fbclid=IwAR2CL5B8FPzAl2iv_KB997b54YWvto6QBMxku7JoeyqdpYdQS7FlnGl9L04)
+2. How do I make it link to other sheets? Adapted from little each of these threads
+    - [Hyperlink to a specific sheet](https://stackoverflow.com/questions/13391768/hyperlink-to-a-specific-sheet?fbclid=IwAR1kPpDGbUCQ1JHkpY7UUdR80dL32Ss3l0HRo6mzStBhvC51j6cEWuhNbWM)
+    - [Linking to another tab in Google Sheets](https://newbedev.com/linking-to-another-tab-in-google-sheets?fbclid=IwAR3c-HjCwTvdlMKngooZLu76LV6xnB2e5V-Isg8-AjUzl5q-eSnOJQEiXeo)
+    - [Iterate over range, append string to each](https://stackoverflow.com/questions/13605213/iterate-over-range-append-string-to-each?fbclid=IwAR2Qe8JN-C2AC1Cl8K2yBmFTUfw9fUGmgpA4E1BcGEy6Znty_wK7VLpZTkk)
+
+This is a more complicated one for sure, as I had to learn how we originally add link to a cell using equal sign `=hyperlink("...")`, and how to refer to a string variable in a string(?) `` `${variable}` ``).
 It took more time than the first problem, but it works!
 It is getting more and more fun.
-Now we have linked the cells to its coresponding sheet. The navigation has become much easier.
+
+Now, we have linked the cells to its coresponding sheet. The navigation has become much easier.
+
 Just a little bit more, let's move on to the final part.
-The only tedious thing left to do is to keep track of the total money spending on each of category.
-In other words, I want to keep track of the sums of numeric values in "Amount" column of each category.
-Doing this manually would be:
-1) Click at a cell on the right of a name cell.
-2) type '=SUM()'
-3) Navigate to the name cell's corresponding sheet
-4) Select the entire column A
-5) Press Enter
-6) Navigate back to the main sheet
 
 ### The Final Problem
+
+The only tedious thing left to do is to keep track of the total money spending on each of category.
+
+In other words, I want to keep track of the sums of numeric values in "Amount" column of each category.
+Doing this manually would be:
+1. Click at a cell on the right of a name cell.
+2. type `=SUM()`
+3. Navigate to the name cell's corresponding sheet
+4. Select the entire column A
+5. Press Enter
+6. Navigate back to the main sheet
+
 <blockquote>
 You are given a spreadsheet, which contains several sheets inside. In one of the sheets, the cells in the first column contain the names of all other sheets, and they also link to their corresponding sheets. Make the cells to the right of each cell of the first column correspond to the sum of all numberic values in its corresponding sheet's first column (column A).
 </blockquote>
@@ -134,13 +150,24 @@ You are given a spreadsheet, which contains several sheets inside. In one of the
 [Thai Version] "ใน spreadsheet อันหนึ่ง มี sheet หลายอัน โดยมี sheet นึงที่แต่ละ cell ในคอลัมน์แรก (คอลัมน์ A) เต็มไปด้วยชื่อของ sheet อื่น(นอกจาก sheet นี้)ทั้งหมดอยู่ และแต่ละ cell ยัง link ไปยัง sheet ที่มีชื่อเดียวกับชื่อที่ระบุใน cell นั้น ๆ อีกด้วย เราอยากทำให้ cell ที่อยู่ทางขวาของแต่ละ cell (cell ในคอลัมน์ B ในแถวเดียวกัน) เป็นผลรวมของเลขในคอลัมน์ที่ A ทั้งคอลัมน์ใน sheet ที่ link กับ cell นั้น"
 </blockquote>
 Luckily this time, I got almost all the things I need from the previous problems.
+
 This is what I searched for additionally:
-1) How does each function work? What are their inputs? What are their outputs? I looked it up on devlopers.googles.com/apps-cript. For example, I want to know function 'getValue()' of 'sheet' object will return, so I searched for https://developers.google.com/.../refer.../spreadsheet/sheet
-2) How to get a reference to any cell object, knowing its row and column? https://blog.gsmart.in/google-sheet-script-get-cell-value/
+1. How does each function work? What are their inputs? What are their outputs? I looked it up on [developers.google.com/apps-script](https://developers.google.com/apps-script). For example, I want to know what function `getValue()` of `sheet` object will return, so I searched for [the documentation of the object](https://developers.google.com/apps-script/reference/spreadsheet/sheet?fbclid=IwAR3zX05fGGYIjTEz6nn7NI_2_p2WrgU0Hf1iUvHSjV5ZHeKaUJchZcFvckY)
+2. [How to get a reference to any cell object, knowing its row and column?](https://blog.gsmart.in/google-sheet-script-get-cell-value/)
+
 I did say that I know most of things I need for this problem.
 However, this problem takes the longest time to debug out of all three (lmao), by a lot too.
 
 ## The Final Product
-Here's the link to the finished spreadsheet (the scripts are available in 'Tool > Script Editor')
-https://docs.google.com/.../1GrePsU8OO7W58bBz4W8y.../edit...
+Here's the [link](https://docs.google.com/spreadsheets/d/1GrePsU8OO7W58bBz4W8yKHUcF--LIM4fzk-1DBNcUsM/edit?usp=sharing) to the finished spreadsheet (the scripts are available in `Tool > Script Editor`)
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/Project7_finalproduct.jpg" title="YNAB Spreadsheet" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Screenshot of the final product!
+</div>
+
 Thank you for reading!

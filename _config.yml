@@ -150,6 +150,12 @@ exclude:
   - _posts/2021-07-04-diagrams.md
   - _posts/2015-10-20-math.md
   - _posts/2022-02-01-redirect.md
+  - _projects/1_project.md
+  - _projects/2_project.md
+  - _projects/3_project.md
+  - _projects/4_project.md
+  - _projects/5_project.md
+  - _projects/6_project.md
 keep_files:
   - CNAME
   - .nojekyll
