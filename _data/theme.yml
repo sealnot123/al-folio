@@ -73,6 +73,7 @@ font:
       - name: Lora
       - name: Maitree
         weight: 400
+      - name: Inter
     default: serif
   mono:
     families:

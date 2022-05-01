@@ -56,7 +56,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 
 github_username: sealnot123 # your GitHub user name
 gitlab_username: # your GitLab user name
-twitter_username: moopanat5531 # your Twitter handle
+twitter_username: # your Twitter handle
 linkedin_username: # your LinkedIn user name
 scholar_userid: # your Google Scholar ID
 orcid_id: # your ORCID ID
@@ -72,7 +72,7 @@ dblp_url: # your DBLP profile url
 stackoverflow_id: #your stackoverflow id
 
 contact_note: >
-  Feel free to reach out to me through Twitter!
+  Feel free to reach out to me through email!
 
 google_analytics:  # your google-analytics ID (format: UA-XXXXXXXXX)
 google_site_verification:  # your google-site-verification ID (Google Search Console)
@@ -140,6 +140,16 @@ exclude:
   - _pages/teaching.md
   - _pages/publications.md
   - _pages/dropdown.md
+  - _posts/2015-03-15-formatting-and-links.md  
+  - _posts/2018-12-22-distill.md
+  - _posts/2015-05-15-images.md
+  - _posts/2020-09-28-github-metadata.md
+  - _posts/2015-07-15-code.md
+  - _posts/2020-09-28-twitter.md
+  - _posts/2015-10-20-comments.md
+  - _posts/2021-07-04-diagrams.md
+  - _posts/2015-10-20-math.md
+  - _posts/2022-02-01-redirect.md
 keep_files:
   - CNAME
   - .nojekyll

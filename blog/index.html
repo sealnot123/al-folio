@@ -26,6 +26,7 @@ neizod: true
   -->
 
 
+    {% if paginator.posts.size != 0 %}
   <ul class="post-list">
     {% for post in paginator.posts %}
 
@@ -105,3 +106,6 @@ neizod: true
   {% include pagination.html %}
 
 </div>
+  {% else %}
+    <div class="center_box"><h1> Coming soon! </h1></div>
+  {% endif %}
