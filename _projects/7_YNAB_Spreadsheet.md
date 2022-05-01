@@ -7,6 +7,14 @@ importance: 1
 category: fun
 ---
 
+<center>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/Project7_intro.jpg" title="YNAB Spreadsheet" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+</center>
+
 ## Inspiration
 
 I came to the US in late August. 
