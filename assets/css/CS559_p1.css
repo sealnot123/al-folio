@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+}
+#myCanvas {
+    border: 1px solid;
+}
+#mySlider {
+    width: 500px;
+}
